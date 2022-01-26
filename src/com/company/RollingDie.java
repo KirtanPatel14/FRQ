@@ -16,12 +16,10 @@ public class RollingDie {
      */
     public int toss()
     {
+
         return (int)(6 * Math.random()) + 1;
     }
 
-	/* Write the method getRolls that takes a number of tosses as a parameter.  The method
-	should return an array of values produced by rolling the die the given number of times.
-	*/
 
     /** Returns an array of the values obtained by tossing the die numTosses times.
      *  @param numTosses the number of die tosses
@@ -30,8 +28,13 @@ public class RollingDie {
      */
     public int[] getRolls(int numTosses)
     {
+        int[] tossA = new int[numTosses];
 
-        return {0,0};  // replace this
+        for(int i = 0; i < numTosses; i++) {
+
+            tossA[i] = toss();
+        }
+        return tossA;
     }
 
 	/*Write the method getLongestRun that takes as its parameter a array of integer values
@@ -45,7 +48,7 @@ public class RollingDie {
     public int getBestRun(int[] values)
     {
 
-        return -1;  //replace this
+
     }
 
 

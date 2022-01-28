@@ -45,10 +45,28 @@ public class RollingDie {
 	Precondition:  values.length > 0
 	*/
 
-    public int getBestRun(int[] values)
-    {
+    public int getBestRun(int[] values) {
+        int Count = 0;
+        int Run = 0;
+        int bestrun = 0;
+        int bestcount = 0;
 
-
+        for (int i = 1; i < values.length ; i++) {
+            if (values[i] == values[i-1]) {
+                Count++;
+            }
+            else {
+                if (Count > bestcount) {
+                    bestcount = Count;
+                    bestrun = Run;
+                }
+                Count = 0;
+                Run = i;
+            }
+        }
+            if (Count > bestrun) { bestrun = Count;}
+            if(bestcount == 0) return -1;
+        return bestrun;
     }
 
 
